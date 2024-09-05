@@ -19,12 +19,24 @@ nav {
 nav a {
     display: block;
     margin: 10px;
-    color: #121212;
-    text-decoration: none;
 }
 
 nav a.active {
     font-weight: bold;
+}
+
+.aboutLinks {
+    display: flex;
+    gap: 10px;
+}
+
+.aboutLinks img:hover {
+    cursor: pointer;
+}
+
+.aboutLinksImage {
+    width: 17px;
+    height: 17px;
 }
 
 section {
@@ -38,4 +50,9 @@ section {
 h1,
 p {
     margin: 5px;
+}
+
+a {
+    color: #121212;
+    text-decoration: none;
 }
