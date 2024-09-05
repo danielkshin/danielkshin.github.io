@@ -23,6 +23,10 @@ nav a {
     text-decoration: none;
 }
 
+nav a.active {
+    font-weight: bold;
+}
+
 section {
     min-height: 100vh;
     display: flex;
