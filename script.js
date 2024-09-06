@@ -1,6 +1,6 @@
 // Bolden nav link of current section
-let sections = [...document.getElementsByTagName('section')];
-let navLinks = [...document.getElementsByTagName('a')];
+const sections = [...document.getElementsByTagName('section')];
+const navLinks = [...document.getElementsByTagName('a')];
 
 window.addEventListener('scroll', () => {
     let currentPosition = window.scrollY + 1;
@@ -11,4 +11,14 @@ window.addEventListener('scroll', () => {
             navLinks[i].classList.add('active');
         }
     }
+});
+
+// Copy email to clipboard
+const emailImage = document.getElementById('emailImage');
+emailImage.addEventListener('click', () => {
+    navigator.clipboard.writeText('dkmshin@uw.edu');
+    emailImage.src = 'assets/copied.png';
+    setTimeout(function () {
+        emailImage.src = 'assets/email.png';
+    }, 700);
 });
