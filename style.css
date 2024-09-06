@@ -17,12 +17,6 @@ nav {
     padding: 20px;
 }
 
-@media (max-width: 800px) {
-    nav {
-        display: none;
-    }
-}
-
 nav a {
     display: block;
     margin: 10px;
@@ -49,19 +43,42 @@ nav a.active {
 .card {
     display: flex;
     align-items: center;
+    width: 500px;
+    margin: 10px;
     padding: 15px;
     gap: 10px;
     border-radius: 5px;
     border-style: solid;
     border-width: 2px;
     border-color: #e7e7e7;
-    box-shadow: 7px 7px 10px #c2c2c2,
-        -7px -7px 10px #ffffff;
+    box-shadow: 7px 7px 7px #c2c2c2,
+        -7px -7px 7px #fcfcfc;
+    transition-duration: 0.5s;
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #c2c2c2,
+        0px 0px 0px #fcfcfc;
+}
+
+.card p {
+    width: 130%;
 }
 
 .card img {
     width: 70px;
     height: 70px;
+    border-radius: 5px;
+}
+
+.cardIcons {
+    width: 25px;
+}
+
+.cardIcons img {
+    width: 20px;
+    height: 20px;
 }
 
 section {
@@ -86,4 +103,24 @@ p {
 a {
     color: #121212;
     text-decoration: none;
+}
+
+@media (max-width: 800px) {
+    nav {
+        display: none;
+    }
+
+    .card {
+        width: 300px;
+    }
+
+    .card img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .cardIcons img {
+        width: 15px;
+        height: 15px;
+    }
 }
