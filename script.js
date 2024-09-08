@@ -103,3 +103,18 @@ emailImage.addEventListener('click', () => {
         emailImage.src = 'assets/socials/email.png';
     }, 1000);
 });
+
+// Change to dark/light theme
+const themeButton = document.getElementById('themeButton');
+const themeElements = [document.body, ...document.getElementsByTagName('img'), ...document.getElementsByClassName('card')];
+themeButton.addEventListener('click', () => {
+    if (document.body.classList.contains('dark')) {
+        themeElements.forEach((element) => {
+            element.classList.remove('dark');
+        });
+    } else {
+        themeElements.forEach((element) => {
+            element.classList.add('dark');
+        });
+    }
+});
