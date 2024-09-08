@@ -4,27 +4,69 @@ const projects = [
         'name': 'Hankel',
         'description': 'A soccer planner.',
         'link': 'https://danielkshin.github.io/Hankel',
-        'image': 'https://raw.githubusercontent.com/danielkshin/Hankel/main/assets/logo.png',
+        'image': 'assets/hankel.png',
         'languages': ['html', 'css', 'js'],
     },
     {
-        'name': 'colors',
-        'description': 'A remake of a 2D platformer game I created in my high school sophomore year.',
+        'name': 'colors (remake)',
+        'description': 'An original 2D platformer game with a unique mechanic around colors.',
         'link': 'https://danielkshin.github.io/colors',
-        'image': 'https://raw.githubusercontent.com/danielkshin/colors/main/icon.png',
-        'languages': ['html', 'css', 'js'],
+        'image': 'assets/colors.png',
+        'languages': ['js'],
     },
     {
         'name': 'VOTD Lock Screen Widget',
         'description': 'A Scriptable lock screen widget that displays the YouVersion Bible verse of the day.',
         'link': 'https://www.github.com/danielkshin/VOTD-Lock-Screen-Widget',
-        'image': 'https://scriptable.app/assets/appicon.png',
+        'image': 'assets/widget.png',
         'languages': ['js'],
     },
+    {
+        'name': 'colors (original)',
+        'description': 'An original 2D platformer game with a unique mechanic around colors.',
+        'link': 'https://danielkshin.github.io/APCSP-Projects/#colors',
+        'image': 'assets/colorsOriginal.png',
+        'languages': ['py'],
+    },
+    {
+        'name': 'whatever this game is called',
+        'description': 'An interactive novel game.',
+        'link': 'https://danielkshin.github.io/APCSP-Projects/#whatever-this-game-is-called-an-interactive-novel',
+        'image': 'assets/novel.png',
+        'languages': ['py'],
+    },
+    {
+        'name': 'WORDLE console',
+        'description': 'A WORDLE clone faithfully recreated in the console.',
+        'link': 'https://danielkshin.github.io/APCSP-Projects/#wordle-console',
+        'image': 'assets/wordle.png',
+        'languages': ['py'],
+    },
+    {
+        'name': 'jump!',
+        'description': 'A 2D recreation of a 3D mini-game.',
+        'link': 'https://danielkshin.github.io/APCSP-Projects/#jump',
+        'image': 'assets/jump.png',
+        'languages': ['py'],
+    },
+    {
+        'name': 'bounce!',
+        'description': 'A blatant Flappy Bird clone. Well, sort of.',
+        'link': 'https://danielkshin.github.io/APCSP-Projects/#bounce',
+        'image': 'assets/bounce.png',
+        'languages': ['py'],
+    },
+    {
+        'name': 'omok',
+        'description': 'A classic two-player game with the goal of forming a five-in-a-row.',
+        'link': 'https://danielkshin.github.io/APCSP-Projects/#omok',
+        'image': 'assets/omok.png',
+        'languages': ['py'],
+    },
 ]
-
+const projectsDiv = document.getElementById('projects');
 for (const project of projects) {
-    document.getElementById('projects').innerHTML +=
+    projectsDiv.innerHTML +=
         `<a href="${project.link}" target="_blank">
             <div class="card">
                 <img src="${project.image}">
@@ -41,7 +83,6 @@ for (const project of projects) {
 // Bolden nav link of current section
 const sections = [...document.getElementsByTagName('section')];
 const navLinks = [...document.getElementsByTagName('a')];
-
 window.addEventListener('scroll', () => {
     let currentPosition = window.scrollY + 1;
 
