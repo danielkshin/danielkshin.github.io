@@ -98,8 +98,8 @@ window.addEventListener('scroll', () => {
 const emailImage = document.getElementById('emailImage');
 emailImage.addEventListener('click', () => {
     navigator.clipboard.writeText('dkmshin@uw.edu');
-    emailImage.src = 'assets/copied.png';
+    emailImage.src = 'assets/socials/copied.png';
     setTimeout(function () {
-        emailImage.src = 'assets/email.png';
+        emailImage.src = 'assets/socials/email.png';
     }, 1000);
 });
