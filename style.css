@@ -128,8 +128,18 @@ footer {
 }
 
 @media (max-width: 800px) {
+
     nav {
+        padding: 0px;
+    }
+
+    nav h1,
+    nav a {
         display: none;
+    }
+
+    nav img {
+        display: block;
     }
 
     .card {
@@ -174,6 +184,6 @@ nav img.dark {
 nav img.dark,
 .socials img.dark,
 .languages img.dark {
-    background-color: #e4e4e4;
+    background: none;
     filter: invert(100%);
 }
