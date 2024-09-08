@@ -11,13 +11,23 @@ body {
     color: #121212;
 }
 
+h1,
+p {
+    margin: 15px;
+}
+
+a {
+    color: #121212;
+    text-decoration: none;
+}
+
 nav {
-    display: block;
     position: fixed;
     padding: 20px;
 }
 
-nav a {
+nav a,
+nav h1 {
     display: block;
     margin: 10px;
 }
@@ -26,18 +36,31 @@ nav a.active {
     font-weight: bold;
 }
 
-.aboutLinks {
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#education,
+#experience {
+    min-height: 50vh;
+}
+
+.socials {
     display: flex;
     gap: 10px;
 }
 
-.aboutLinks img:hover {
-    cursor: pointer;
-}
-
-.aboutLinksImage {
+.socials img {
     width: 17px;
     height: 17px;
+}
+
+.socials img:hover {
+    cursor: pointer;
 }
 
 .card {
@@ -46,7 +69,7 @@ nav a.active {
     width: 500px;
     margin: 10px;
     padding: 15px;
-    gap: 10px;
+    gap: 5px;
     border-radius: 5px;
     border-style: solid;
     border-width: 2px;
@@ -63,7 +86,7 @@ nav a.active {
 }
 
 .card p {
-    width: 130%;
+    width: inherit;
 }
 
 .card img {
@@ -72,37 +95,20 @@ nav a.active {
     border-radius: 5px;
 }
 
-.cardIcons {
-    width: 25px;
+.languages {
+    width: 20px;
 }
 
-.cardIcons img {
+.languages img {
     width: 20px;
     height: 20px;
 }
 
-section {
-    min-height: 100vh;
+footer {
+    padding-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-}
-
-#education,
-#experience {
-    min-height: 50vh;
-}
-
-h1,
-p {
-    margin: 15px;
-}
-
-
-a {
-    color: #121212;
-    text-decoration: none;
 }
 
 @media (max-width: 800px) {
@@ -119,7 +125,7 @@ a {
         height: 30px;
     }
 
-    .cardIcons img {
+    .languages img {
         width: 15px;
         height: 15px;
     }

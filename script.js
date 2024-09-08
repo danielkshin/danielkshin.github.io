@@ -73,8 +73,8 @@ for (const project of projects) {
                 <p><b>${project.name}</b><br>
                     ${project.description}
                 </p>
-                <div class="cardIcons">
-                <img src="assets/${project.languages.join('.png">\n<img src="assets/')}.png">
+                <div class="languages">
+                    <img src="assets/${project.languages.join('.png">\n<img src="assets/')}.png">
                 </div>
             </div>
         </a>`;
@@ -101,5 +101,5 @@ emailImage.addEventListener('click', () => {
     emailImage.src = 'assets/copied.png';
     setTimeout(function () {
         emailImage.src = 'assets/email.png';
-    }, 700);
+    }, 1000);
 });
