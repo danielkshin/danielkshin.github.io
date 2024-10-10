@@ -33,7 +33,8 @@ const About = () => {
         <img src={!copiedEmail ? email : copied} onClick={copyEmail} />
       </div>
       <p>
-        to do: write <i>about me</i>
+        I am a freshman studying computer science at the Paul G. Allen School of
+        Computer Science and Engineering at the <b>University of Washington.</b>
       </p>
     </section>
   );

@@ -84,6 +84,11 @@ section {
   flex-direction: column;
 }
 
+section p {
+  width: 550px;
+  text-align: center;
+}
+
 #education,
 #experience {
   min-height: 50vh;
