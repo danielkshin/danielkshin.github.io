@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   instantGoals,
   hankel,
@@ -103,10 +104,12 @@ const projects: Project[] = [
 ];
 
 const Projects = () => {
+  const [showMore, setShowMore] = useState(false);
+
   return (
     <section id="projects">
       <h1>projects</h1>
-      {projects.map((project) => (
+      {projects.slice(0, showMore ? projects.length : 3).map((project) => (
         <a
           href={project.link}
           target="_blank"
@@ -128,6 +131,14 @@ const Projects = () => {
           </div>
         </a>
       ))}
+      <p
+        className="showMore"
+        onClick={() => {
+          setShowMore(!showMore);
+        }}
+      >
+        <b>{!showMore ? 'show more' : 'show less'}</b>
+      </p>
     </section>
   );
 };

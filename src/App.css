@@ -138,6 +138,10 @@ section {
   border-radius: 5px;
 }
 
+.showMore:hover {
+  cursor: pointer;
+}
+
 .languages {
   width: 20px;
 }
