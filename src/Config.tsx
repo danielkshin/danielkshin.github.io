@@ -74,14 +74,14 @@ const config: Config = {
       description: 'Goals and highlights on demand.',
       link: 'https://instantgoals.netlify.app',
       image: assets.instantGoals,
-      languages: ['react', 'node', 'css'],
+      languages: [assets.react, assets.node, assets.css],
     },
     {
       name: 'Hankel',
       description: 'A soccer planner.',
       link: 'https://danielkshin.github.io/Hankel',
       image: assets.hankel,
-      languages: ['html', 'css', 'js'],
+      languages: [assets.html, assets.css, assets.js],
     },
     {
       name: 'colors (remake)',
@@ -89,7 +89,7 @@ const config: Config = {
         'An original 2D platformer game with a unique mechanic around colors.',
       link: 'https://danielkshin.github.io/colors',
       image: assets.colors,
-      languages: ['js'],
+      languages: [assets.js],
     },
     {
       name: 'VOTD Lock Screen Widget',
@@ -97,7 +97,7 @@ const config: Config = {
         'A Scriptable lock screen widget that displays the YouVersion Bible verse of the day.',
       link: 'https://www.github.com/danielkshin/VOTD-Lock-Screen-Widget',
       image: assets.widget,
-      languages: ['js'],
+      languages: [assets.js],
     },
     {
       name: 'colors (original)',
@@ -105,35 +105,35 @@ const config: Config = {
         'An original 2D platformer game with a unique mechanic around colors.',
       link: 'https://danielkshin.github.io/APCSP-Projects/#colors',
       image: assets.colorsOriginal,
-      languages: ['py'],
+      languages: [assets.py],
     },
     {
       name: 'whatever this game is called',
       description: 'An interactive novel game.',
       link: 'https://danielkshin.github.io/APCSP-Projects/#whatever-this-game-is-called-an-interactive-novel',
       image: assets.novel,
-      languages: ['py'],
+      languages: [assets.py],
     },
     {
       name: 'WORDLE console',
       description: 'A WORDLE clone faithfully recreated in the console.',
       link: 'https://danielkshin.github.io/APCSP-Projects/#wordle-console',
       image: assets.wordle,
-      languages: ['py'],
+      languages: [assets.py],
     },
     {
       name: 'jump!',
       description: 'A 2D recreation of a 3D mini-game.',
       link: 'https://danielkshin.github.io/APCSP-Projects/#jump',
       image: assets.jump,
-      languages: ['py'],
+      languages: [assets.py],
     },
     {
       name: 'bounce!',
       description: 'A blatant Flappy Bird clone. Well, sort of.',
       link: 'https://danielkshin.github.io/APCSP-Projects/#bounce',
       image: assets.bounce,
-      languages: ['py'],
+      languages: [assets.py],
     },
     {
       name: 'omok',
@@ -141,16 +141,10 @@ const config: Config = {
         'A classic two-player game with the goal of forming a five-in-a-row.',
       link: 'https://danielkshin.github.io/APCSP-Projects/#omok',
       image: assets.omok,
-      languages: ['py'],
+      languages: [assets.py],
     },
   ],
 };
-
-for (const project of config.projects) {
-  project.languages = project.languages.map(
-    (language) => assets[language]
-  ) as string[];
-}
 
 const about = config.about;
 const education = config.education;
