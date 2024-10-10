@@ -148,8 +148,8 @@ const config: Config = {
 
 for (const project of config.projects) {
   project.languages = project.languages.map(
-    (language) => `src/assets/languages/${language}.png`
-  );
+    (language) => assets[language]
+  ) as string[];
 }
 
 const about = config.about;
