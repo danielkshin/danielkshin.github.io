@@ -7,7 +7,7 @@ interface NavBarProps {
 }
 
 const NavBar = ({ dark, setDark }: NavBarProps) => {
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState('about');
 
   useEffect(() => {
     const sections = ['about', 'education', 'experience', 'projects'];
@@ -22,7 +22,7 @@ const NavBar = ({ dark, setDark }: NavBarProps) => {
         if (
           currentPosition >= sectionElement.offsetTop &&
           currentPosition <
-            sectionElement.offsetTop + sectionElement.offsetHeight
+            +sectionElement.offsetTop + sectionElement.offsetHeight
         ) {
           setActiveSection(section);
         }
