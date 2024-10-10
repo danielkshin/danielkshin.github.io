@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { github, linkedin, email, copied } from './assets';
+import { email, copied } from './assets';
+import { about } from './Config';
 
 const About = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -16,26 +17,19 @@ const About = () => {
     <section id="about">
       <h1>hi, i&apos;m daniel</h1>
       <div className="socials">
-        <a
-          href="https://www.github.com/danielkshin"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={github} />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/danielkshin"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={linkedin} />
-        </a>
+        {about.socials.map((social) => (
+          <a
+            href={social.link}
+            target="_blank"
+            rel="noreferrer"
+            key={social.link}
+          >
+            <img src={social.image} />
+          </a>
+        ))}
         <img src={!copiedEmail ? email : copied} onClick={copyEmail} />
       </div>
-      <p>
-        I am a freshman studying computer science at the Paul G. Allen School of
-        Computer Science and Engineering at the <b>University of Washington.</b>
-      </p>
+      <p>{about.description}</p>
     </section>
   );
 };

@@ -1,19 +1,21 @@
-import { curtis } from './assets';
+import { experience } from './Config';
 
 const Experience = () => {
   return (
     <section id="experience">
       <h1>experience</h1>
-      <div className="card">
-        <img src={curtis} />
-        <p>
-          <b>Computer Science Teacher&apos;s Assistant</b>
-          <br />
-          <i>Curtis Senior High School</i>
-          <br />
-          September 2023 - June 2024
-        </p>
-      </div>
+      {experience.map((experience) => (
+        <div className="card" key={experience.title + experience.company}>
+          <img src={experience.image} />
+          <p>
+            <b>{experience.title}</b>
+            <br />
+            <i>{experience.company}</i>
+            <br />
+            {experience.date}
+          </p>
+        </div>
+      ))}
     </section>
   );
 };

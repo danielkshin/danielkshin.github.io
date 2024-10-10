@@ -1,19 +1,21 @@
-import { UW } from './assets';
+import { education } from './Config';
 
 const Education = () => {
   return (
     <section id="education">
       <h1>education</h1>
-      <div className="card">
-        <img src={UW} />
-        <p>
-          <b>B.Sc. Computer Science</b>
-          <br />
-          <i>University of Washington, Seattle, WA</i>
-          <br />
-          September 2024 - Present
-        </p>
-      </div>
+      {education.map((education) => (
+        <div className="card" key={education.degree + education.school}>
+          <img src={education.image} />
+          <p>
+            <b>{education.degree}</b>
+            <br />
+            <i>{education.school}</i>
+            <br />
+            {education.date}
+          </p>
+        </div>
+      ))}
     </section>
   );
 };
