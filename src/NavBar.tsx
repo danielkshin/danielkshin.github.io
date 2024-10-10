@@ -20,7 +20,7 @@ const NavBar = ({ dark, setDark }: NavBarProps) => {
         if (!sectionElement) return;
 
         if (
-          currentPosition > sectionElement.offsetTop &&
+          currentPosition >= sectionElement.offsetTop &&
           currentPosition <
             sectionElement.offsetTop + sectionElement.offsetHeight
         ) {
