@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import NavBar from './NavBar';
 import About from './About';
@@ -9,6 +9,13 @@ import Footer from './Footer';
 
 const App = () => {
   const [dark, setDark] = useState(localStorage.getItem('dark') === 'true');
+
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      'color-scheme',
+      dark ? 'dark' : 'light'
+    );
+  }, [dark]);
 
   return (
     <div className={`App${dark ? ' dark' : ''}`}>
