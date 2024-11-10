@@ -172,6 +172,10 @@ footer {
     display: block;
   }
 
+  #about p {
+    width: 320px;
+  }
+
   .card {
     width: 300px;
   }
