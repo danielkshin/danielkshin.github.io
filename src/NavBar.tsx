@@ -6,31 +6,45 @@ interface NavBarProps {
   setDark: Dispatch<SetStateAction<boolean>>;
 }
 
+const useScrollPosition = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const updateScrollPosition = () => {
+      setScrollPosition(Math.ceil(window.scrollY));
+    };
+
+    updateScrollPosition();
+
+    window.addEventListener('scroll', updateScrollPosition);
+
+    return () => {
+      window.removeEventListener('scroll', updateScrollPosition);
+    };
+  }, []);
+
+  return scrollPosition;
+};
+
 const NavBar = ({ dark, setDark }: NavBarProps) => {
+  const scrollPosition = useScrollPosition();
   const [activeSection, setActiveSection] = useState('about');
 
   useEffect(() => {
     const sections = ['about', 'education', 'experience', 'projects'];
 
-    const handleScroll = () => {
-      const currentPosition = window.scrollY + 1;
+    sections.forEach((section) => {
+      const sectionElement = document.getElementById(section);
+      if (!sectionElement) return;
 
-      sections.forEach((section) => {
-        const sectionElement = document.getElementById(section);
-        if (!sectionElement) return;
-
-        if (
-          currentPosition >= sectionElement.offsetTop &&
-          currentPosition <
-            +sectionElement.offsetTop + sectionElement.offsetHeight
-        ) {
-          setActiveSection(section);
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-  });
+      if (
+        scrollPosition >= sectionElement.offsetTop &&
+        scrollPosition < sectionElement.offsetTop + sectionElement.offsetHeight
+      ) {
+        setActiveSection(section);
+      }
+    });
+  }, [scrollPosition]);
 
   const changeTheme = () => {
     localStorage.setItem('dark', (!dark).toString());
