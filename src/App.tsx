@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import useLocalStorage from 'use-local-storage';
 import './App.css';
 import {
   NavBar,
@@ -10,7 +11,7 @@ import {
 } from 'components';
 
 const App = () => {
-  const [dark, setDark] = useState(localStorage.getItem('dark') === 'true');
+  const [dark, setDark] = useLocalStorage('dark', false);
 
   useEffect(() => {
     document.documentElement.style.setProperty(
@@ -20,7 +21,7 @@ const App = () => {
   }, [dark]);
 
   return (
-    <div className={`App${dark ? ' dark' : ''}`}>
+    <div className="App" data-theme={dark ? 'dark' : 'light'}>
       <NavBar dark={dark} setDark={setDark} />
       <About />
       <Education />

@@ -1,13 +1,15 @@
-.App {
+:root {
   --background: #f2f2f2;
   --text: #121212;
+}
 
+.App {
   background-color: var(--background);
   color: var(--text);
   transition-duration: 1s;
 }
 
-.App.dark {
+[data-theme='dark'] {
   --background: #1b1b1b;
   --text: #f2f2f2;
 

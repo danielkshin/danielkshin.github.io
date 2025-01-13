@@ -1,9 +1,9 @@
-import { useState, useEffect, Dispatch, SetStateAction } from 'react';
-import { theme } from 'assets';
+import { useState, useEffect } from 'react';
+import { ThemeButton } from 'components';
 
 interface NavBarProps {
   dark: boolean;
-  setDark: Dispatch<SetStateAction<boolean>>;
+  setDark: (error: boolean) => void;
 }
 
 const useScrollPosition = () => {
@@ -46,11 +46,6 @@ const NavBar = ({ dark, setDark }: NavBarProps) => {
     });
   }, [scrollPosition]);
 
-  const changeTheme = () => {
-    localStorage.setItem('dark', (!dark).toString());
-    setDark(!dark);
-  };
-
   return (
     <nav>
       <h1>daniel shin</h1>
@@ -75,7 +70,7 @@ const NavBar = ({ dark, setDark }: NavBarProps) => {
       >
         projects
       </a>
-      <img src={theme} onClick={changeTheme} />
+      <ThemeButton dark={dark} setDark={setDark} />
     </nav>
   );
 };

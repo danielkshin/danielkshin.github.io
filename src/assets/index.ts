@@ -2,7 +2,7 @@ export { default as github } from './socials/github.png';
 export { default as linkedin } from './socials/linkedin.png';
 export { default as email } from './socials/email.png';
 export { default as copied } from './socials/copied.png';
-export { default as theme } from './theme.png';
+export { default as themeIcon } from './themeIcon.png';
 export { default as UW } from './education/UW.png';
 export { default as curtis } from './experience/curtis.png';
 export { default as instantGoals } from './projects/instantGoals.png';
