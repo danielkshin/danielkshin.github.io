@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { projects } from 'Config';
+import './Projects.css';
 
 const Projects = () => {
   const [showMore, setShowMore] = useState(false);

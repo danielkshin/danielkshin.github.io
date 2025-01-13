@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { email, copied } from 'assets';
 import { about } from 'Config';
+import './About.css';
 
 const About = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);

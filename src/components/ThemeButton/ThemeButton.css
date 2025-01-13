@@ -1,0 +1,5 @@
+[data-theme='dark'] {
+  .theme img {
+    transform: rotate(-90deg);
+  }
+}

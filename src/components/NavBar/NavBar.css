@@ -1,0 +1,39 @@
+nav {
+  position: fixed;
+  padding: 20px;
+}
+
+nav img {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+
+nav img:hover {
+  cursor: pointer;
+}
+
+nav a,
+nav h1 {
+  display: block;
+  margin: 10px;
+}
+
+nav a.active {
+  font-weight: bold;
+}
+
+@media (max-width: 800px) {
+  nav {
+    padding: 0px;
+  }
+
+  nav h1,
+  nav a {
+    display: none;
+  }
+
+  nav img {
+    display: block;
+  }
+}

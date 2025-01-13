@@ -26,10 +26,6 @@
     box-shadow: 0px 0px 0px #0a0a0a, 0px 0px 0px #232323;
   }
 
-  nav img {
-    transform: rotate(-90deg);
-  }
-
   nav img,
   .socials img,
   .languages img {
@@ -53,31 +49,6 @@ img {
   transition-duration: 1s;
 }
 
-nav {
-  position: fixed;
-  padding: 20px;
-}
-
-nav img {
-  width: 30px;
-  height: 30px;
-  margin: 10px;
-}
-
-nav img:hover {
-  cursor: pointer;
-}
-
-nav a,
-nav h1 {
-  display: block;
-  margin: 10px;
-}
-
-nav a.active {
-  font-weight: bold;
-}
-
 section {
   min-height: 100vh;
   display: flex;
@@ -86,28 +57,9 @@ section {
   flex-direction: column;
 }
 
-#about p {
-  width: 550px;
-  text-align: center;
-}
-
 #education,
 #experience {
   min-height: 50vh;
-}
-
-.socials {
-  display: flex;
-  gap: 10px;
-}
-
-.socials img {
-  width: 17px;
-  height: 17px;
-}
-
-.socials img:hover {
-  cursor: pointer;
 }
 
 .card {
@@ -140,44 +92,7 @@ section {
   border-radius: 5px;
 }
 
-.showMore:hover {
-  cursor: pointer;
-}
-
-.languages {
-  width: 20px;
-}
-
-.languages img {
-  width: 20px;
-  height: 20px;
-}
-
-footer {
-  padding-top: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 @media (max-width: 800px) {
-  nav {
-    padding: 0px;
-  }
-
-  nav h1,
-  nav a {
-    display: none;
-  }
-
-  nav img {
-    display: block;
-  }
-
-  #about p {
-    width: 320px;
-  }
-
   .card {
     width: 300px;
   }
@@ -185,10 +100,5 @@ footer {
   .card img {
     width: 30px;
     height: 30px;
-  }
-
-  .languages img {
-    width: 15px;
-    height: 15px;
   }
 }

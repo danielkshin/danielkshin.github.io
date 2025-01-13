@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './NavBar.css';
 import { ThemeButton } from 'components';
 
 interface NavBarProps {
