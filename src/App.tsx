@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import NavBar from './NavBar';
-import About from './About';
-import Education from './Education';
-import Experience from './Experience';
-import Projects from './Projects';
-import Footer from './Footer';
+import {
+  NavBar,
+  About,
+  Education,
+  Experience,
+  Projects,
+  Footer,
+} from 'components';
 
 const App = () => {
   const [dark, setDark] = useState(localStorage.getItem('dark') === 'true');
