@@ -50,7 +50,7 @@ img {
 }
 
 section {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,7 +59,7 @@ section {
 
 #education,
 #experience {
-  min-height: 50vh;
+  min-height: 50dvh;
 }
 
 .card {
