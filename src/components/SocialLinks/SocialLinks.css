@@ -1,0 +1,14 @@
+.social-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.social-links svg {
+  fill: var(--text-color);
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.social-links a {
+  text-decoration: none;
+}

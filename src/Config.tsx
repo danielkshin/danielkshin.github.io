@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import { SocialLinks } from 'components';
 
 export interface SectionDetails {
   title: string;
@@ -12,7 +13,7 @@ export interface SectionDetails {
 const config: SectionDetails[] = [
   {
     title: 'daniel',
-    content: <p>test</p>,
+    content: <SocialLinks />,
     id: 'about',
     backgroundColor: '#f2f2f2',
     textColor: '#121212',
