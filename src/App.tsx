@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useRef, useState } from 'react';
+import { ReactElement, useEffect, useRef } from 'react';
 import { Section } from 'components';
 import './App.css';
 
@@ -52,50 +52,44 @@ const sections: Section[] = [
     titleColor: '#33dd33',
   },
 ];
-const sectionNames = sections.map((section) => section.id);
 
 const App = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [activeSection, setActiveSection] = useState('about');
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const currentSectionRef = useRef<number>(-1);
 
   useEffect(() => {
     const container = containerRef.current;
 
     if (!container) return;
 
-    const updateScrollPosition = () => {
-      setScrollPosition(container.scrollTop);
+    const handleScroll = () => {
+      const newSection = Math.floor(container.scrollTop / window.innerHeight);
+
+      if (newSection === currentSectionRef.current) return;
+
+      currentSectionRef.current = newSection;
+      container.style.setProperty(
+        '--bg-color',
+        sections[newSection].backgroundColor
+      );
+      container.style.setProperty(
+        '--text-color',
+        sections[newSection].textColor
+      );
+      container.style.setProperty(
+        '--title-color',
+        sections[newSection].titleColor
+      );
     };
 
-    container.addEventListener('scroll', updateScrollPosition);
+    container.addEventListener('scroll', handleScroll);
 
-    sectionNames.forEach((section) => {
-      const sectionElement = document.getElementById(section);
-
-      if (!sectionElement) return;
-
-      if (
-        scrollPosition >= sectionElement.offsetTop &&
-        scrollPosition <
-          sectionElement.offsetTop + sectionElement.offsetHeight &&
-        section !== activeSection
-      ) {
-        setActiveSection(section);
-        const currentSection = sections[sectionNames.indexOf(section)];
-        container.style.setProperty(
-          '--bg-color',
-          currentSection.backgroundColor
-        );
-        container.style.setProperty('--text-color', currentSection.textColor);
-        container.style.setProperty('--title-color', currentSection.titleColor);
-      }
-    });
+    handleScroll();
 
     return () => {
-      container.removeEventListener('scroll', updateScrollPosition);
+      container.removeEventListener('scroll', handleScroll);
     };
-  }, [activeSection, scrollPosition]);
+  }, []);
 
   const renderSections = (sections: Section[]) => {
     const sectionElements = [];
@@ -115,11 +109,7 @@ const App = () => {
   };
 
   return (
-    <div
-      className={`container ${activeSection}`}
-      id="container"
-      ref={containerRef}
-    >
+    <div className="container" id="container" ref={containerRef}>
       {renderSections(sections)}
     </div>
   );
