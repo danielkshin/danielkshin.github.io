@@ -1,0 +1,32 @@
+section {
+  height: 100vh;
+
+  scroll-snap-align: start;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.top-half {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+
+  height: 50%;
+  --background-color: aqua;
+}
+
+.bottom-half {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+
+  height: 50%;
+  --background-color: pink;
+}

@@ -1,35 +1,65 @@
-import { useEffect } from 'react';
-import useLocalStorage from 'use-local-storage';
+import { ReactElement } from 'react';
+import { Section } from 'components';
 import './App.css';
-import {
-  NavBar,
-  About,
-  Education,
-  Experience,
-  Projects,
-  Footer,
-} from 'components';
+
+interface Section {
+  title: string;
+  content: ReactElement;
+}
 
 const App = () => {
-  const [dark, setDark] = useLocalStorage('dark', false);
+  const sections: Section[] = [
+    {
+      title: 'daniel',
+      content: <p>test</p>,
+    },
+    {
+      title: 'a cs major',
+      content: (
+        <div className="content">
+          <p>
+            I am a freshman studying computer science at the Paul G. Allen
+            School of Computer Science and Engineering at the University of
+            Washington.
+          </p>
+        </div>
+      ),
+    },
+    {
+      title: 'an intern',
+      content: (
+        <div className="content">
+          <p>I am an incoming SDE intern at Amazon for the summer of 2025.</p>
+        </div>
+      ),
+    },
+    {
+      title: 'a programmer',
+      content: (
+        <div className="content">
+          <p>test</p>
+        </div>
+      ),
+    },
+  ];
 
-  useEffect(() => {
-    document.documentElement.style.setProperty(
-      'color-scheme',
-      dark ? 'dark' : 'light'
-    );
-  }, [dark]);
+  const renderSections = (sections: Section[]) => {
+    const sectionElements = [];
 
-  return (
-    <div className="App" data-theme={dark ? 'dark' : 'light'}>
-      <NavBar dark={dark} setDark={setDark} />
-      <About />
-      <Education />
-      <Experience />
-      <Projects />
-      <Footer />
-    </div>
-  );
+    for (const section of sections) {
+      sectionElements.push(
+        <Section
+          key={section.title}
+          title={section.title}
+          content={section.content}
+        />
+      );
+    }
+
+    return sectionElements;
+  };
+
+  return <div>{renderSections(sections)}</div>;
 };
 
 export default App;
