@@ -11,9 +11,9 @@ const Section = (props: SectionProps) => {
   return (
     <section id={props.id}>
       <div className="top-half">
-        <h1 className="fixed">hi i&apos;m</h1>
+        <h1 className="fixed-text">hi i&apos;m</h1>
         <h1>
-          <span style={{ opacity: 0 }}>hi i&apos;m </span>
+          <span className="hidden-text">hi i&apos;m </span>
           {props.title}.
         </h1>
       </div>

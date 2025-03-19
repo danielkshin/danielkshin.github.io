@@ -10,31 +10,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html,
 body {
   margin: 0;
-}
-
-.about {
-  background-color: #f2f2f2;
-  color: #121212;
-}
-
-.education {
-  background-color: #4b2e83;
-  color: #f2f2f2;
-}
-
-.experience {
-  background-color: #232f3e;
-  color: #ff9900;
-}
-
-.projects {
-  background-color: #f2f2f2;
-  color: #121212;
-}
-
-h1,
-p {
-  transition: 1s color;
+  overflow: hidden;
 }
