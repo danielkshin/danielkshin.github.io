@@ -1,11 +1,12 @@
 section {
-  height: 100vh;
+  height: 100dvh;
 
+  scroll-snap-stop: always;
   scroll-snap-align: start;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   margin: 0;
 }
 
@@ -19,7 +20,15 @@ p {
   align-items: end;
 
   height: 50%;
-  --background-color: aqua;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.top-half h1 {
+  width: clamp(15rem, 50%, 30rem);
+  text-align: left;
 }
 
 .bottom-half {
@@ -28,5 +37,9 @@ p {
   align-items: start;
 
   height: 50%;
-  --background-color: pink;
+}
+
+.content {
+  width: clamp(15rem, 50%, 30rem);
+  text-align: left;
 }

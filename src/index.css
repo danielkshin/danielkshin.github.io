@@ -16,5 +16,34 @@ body {
 
 html {
   overflow-y: scroll;
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
+}
+
+.about {
+  background-color: #f2f2f2;
+  color: #121212;
+}
+
+.education {
+  background-color: #4b2e83;
+  color: #f2f2f2;
+}
+
+.experience {
+  background-color: #232f3e;
+  color: #ff9900;
+}
+
+.projects {
+  background-color: #f2f2f2;
+  color: #121212;
+}
+
+div {
+  transition: 1s background-color;
+}
+
+h1,
+p {
+  transition: 1s color;
 }
