@@ -6,6 +6,9 @@ interface Section {
   title: string;
   content: ReactElement;
   id: string;
+  backgroundColor: string;
+  textColor: string;
+  titleColor: string;
 }
 
 const sections: Section[] = [
@@ -13,6 +16,9 @@ const sections: Section[] = [
     title: 'daniel',
     content: <p>test</p>,
     id: 'about',
+    backgroundColor: '#f2f2f2',
+    textColor: '#121212',
+    titleColor: '#5aa57b',
   },
   {
     title: 'a student',
@@ -23,6 +29,9 @@ const sections: Section[] = [
       </p>
     ),
     id: 'education',
+    backgroundColor: '#4b2e83',
+    textColor: '#f2f2f2',
+    titleColor: '#b7a57a',
   },
   {
     title: 'an intern',
@@ -30,11 +39,17 @@ const sections: Section[] = [
       <p>I am an incoming SDE intern at Amazon for the summer of 2025.</p>
     ),
     id: 'experience',
+    backgroundColor: '#232f3e',
+    textColor: '#ff9900',
+    titleColor: '#f2f2f2',
   },
   {
     title: 'a dev',
     content: <p>test</p>,
     id: 'projects',
+    backgroundColor: '#ff0000',
+    textColor: '#121212',
+    titleColor: '#33dd33',
   },
 ];
 const sectionNames = sections.map((section) => section.id);
@@ -67,6 +82,13 @@ const App = () => {
         section !== activeSection
       ) {
         setActiveSection(section);
+        const currentSection = sections[sectionNames.indexOf(section)];
+        container.style.setProperty(
+          '--bg-color',
+          currentSection.backgroundColor
+        );
+        container.style.setProperty('--text-color', currentSection.textColor);
+        container.style.setProperty('--title-color', currentSection.titleColor);
       }
     });
 

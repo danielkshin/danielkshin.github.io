@@ -14,7 +14,7 @@ const Section = (props: SectionProps) => {
         <h1 className="fixed-text">hi i&apos;m</h1>
         <h1>
           <span className="hidden-text">hi i&apos;m </span>
-          {props.title}.
+          <span className="title-text">{props.title}</span>.
         </h1>
       </div>
       <div className="bottom-half">
