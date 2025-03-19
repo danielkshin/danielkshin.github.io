@@ -1,0 +1,7 @@
+.container {
+  height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: y mandatory;
+  transition: 1s background-color;
+}

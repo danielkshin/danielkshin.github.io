@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useState } from 'react';
+import { ReactElement, useEffect, useRef, useState } from 'react';
 import { Section } from 'components';
 import './App.css';
 
@@ -37,36 +37,27 @@ const sections: Section[] = [
     id: 'projects',
   },
 ];
+const sectionNames = sections.map((section) => section.id);
 
-const useScrollPosition = () => {
+const App = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeSection, setActiveSection] = useState('about');
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
+    const container = containerRef.current;
+
+    if (!container) return;
+
     const updateScrollPosition = () => {
-      setScrollPosition(Math.ceil(window.scrollY));
+      setScrollPosition(container.scrollTop);
     };
 
-    updateScrollPosition();
-
-    window.addEventListener('scroll', updateScrollPosition);
-
-    return () => {
-      window.removeEventListener('scroll', updateScrollPosition);
-    };
-  }, []);
-
-  return scrollPosition;
-};
-
-const App = () => {
-  const scrollPosition = useScrollPosition();
-  const [activeSection, setActiveSection] = useState('about');
-
-  useEffect(() => {
-    const sectionNames = sections.map((section) => section.id);
+    container.addEventListener('scroll', updateScrollPosition);
 
     sectionNames.forEach((section) => {
       const sectionElement = document.getElementById(section);
+
       if (!sectionElement) return;
 
       if (
@@ -78,7 +69,11 @@ const App = () => {
         setActiveSection(section);
       }
     });
-  }, [scrollPosition, activeSection]);
+
+    return () => {
+      container.removeEventListener('scroll', updateScrollPosition);
+    };
+  }, [activeSection, scrollPosition]);
 
   const renderSections = (sections: Section[]) => {
     const sectionElements = [];
@@ -97,7 +92,15 @@ const App = () => {
     return sectionElements;
   };
 
-  return <div className={activeSection}>{renderSections(sections)}</div>;
+  return (
+    <div
+      className={`container ${activeSection}`}
+      id="container"
+      ref={containerRef}
+    >
+      {renderSections(sections)}
+    </div>
+  );
 };
 
 export default App;

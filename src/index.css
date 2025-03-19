@@ -14,11 +14,6 @@ body {
   margin: 0;
 }
 
-html {
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-}
-
 .about {
   background-color: #f2f2f2;
   color: #121212;
@@ -37,10 +32,6 @@ html {
 .projects {
   background-color: #f2f2f2;
   color: #121212;
-}
-
-div {
-  transition: 1s background-color;
 }
 
 h1,
