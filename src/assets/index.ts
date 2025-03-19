@@ -5,6 +5,7 @@ export { default as copied } from './socials/copied.png';
 export { default as themeIcon } from './themeIcon.png';
 export { default as UW } from './education/UW.png';
 export { default as curtis } from './experience/curtis.png';
+export { default as amazon } from './experience/amazon.png';
 export { default as instantGoals } from './projects/instantGoals.png';
 export { default as hankel } from './projects/hankel.png';
 export { default as colors } from './projects/colors.png';

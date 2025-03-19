@@ -57,11 +57,6 @@ section {
   flex-direction: column;
 }
 
-#education,
-#experience {
-  min-height: 50dvh;
-}
-
 .card {
   display: flex;
   align-items: center;

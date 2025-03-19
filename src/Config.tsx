@@ -54,6 +54,12 @@ const config: Config = {
   },
   education: [
     {
+      degree: 'High School Diploma',
+      school: 'Curtis Senior High School, University Place, WA',
+      date: 'September 2020 - June 2024',
+      image: assets.curtis,
+    },
+    {
       degree: 'B.Sc. Computer Science',
       school: 'University of Washington, Seattle, WA',
       date: 'September 2024 - Present',
@@ -63,9 +69,15 @@ const config: Config = {
   experience: [
     {
       title: "Computer Science Teacher's Assistant",
-      company: 'Curtis Senior High School',
+      company: 'Curtis Senior High School, University Place WA',
       date: 'September 2023 - June 2024',
       image: assets.curtis,
+    },
+    {
+      title: 'Software Development Engineer Intern',
+      company: 'Amazon, Seattle, WA',
+      date: 'June 2025 - September 2025',
+      image: assets.amazon,
     },
   ],
   projects: [
