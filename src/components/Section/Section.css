@@ -14,7 +14,7 @@ section {
   justify-content: center;
   align-items: end;
 
-  height: 50%;
+  height: 40%;
 }
 
 .bottom-half {
@@ -22,7 +22,7 @@ section {
   justify-content: center;
   align-items: start;
 
-  height: 50%;
+  height: 60%;
 }
 
 .content,

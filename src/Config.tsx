@@ -51,16 +51,16 @@ const config: SectionDetails[] = [
     ),
     id: 'experience',
     backgroundColor: '#232f3e',
-    textColor: '#ff9900',
-    titleColor: '#f2f2f2',
+    textColor: '#f2f2f2',
+    titleColor: '#ff9900',
   },
   {
     title: 'a dev',
     content: <p>I enjoy building random projects. Check them out!</p>,
     id: 'projects',
-    backgroundColor: '#f2f2f2',
-    textColor: '#121212',
-    titleColor: '#dc7b5a',
+    backgroundColor: '#262626',
+    textColor: '#f2f2f2',
+    titleColor: '#676eba',
   },
 ];
 
