@@ -25,7 +25,13 @@ const fireConfetti = () => {
 const config: SectionDetails[] = [
   {
     title: 'daniel',
-    content: <SocialLinks />,
+    content: (
+      <>
+        <p>cs @ uw | incoming sde intern @ amazon</p>
+        <br />
+        <SocialLinks />
+      </>
+    ),
     id: 'about',
     backgroundColor: '#f2f2f2',
     textColor: '#121212',
