@@ -1,5 +1,7 @@
 import { ReactElement } from 'react';
 import { SocialLinks } from 'components';
+import confetti from 'canvas-confetti';
+import './Config.css';
 
 export interface SectionDetails {
   title: string;
@@ -9,6 +11,16 @@ export interface SectionDetails {
   textColor: string;
   titleColor: string;
 }
+
+const fireConfetti = () => {
+  (confetti as (options?: confetti.Options) => void)({
+    particleCount: 100,
+    spread: 80,
+    startVelocity: 40,
+    origin: { y: 0.6 },
+    colors: ['#ff9900', '#146eb4', '#232f3e', '#f2f2f2'],
+  });
+};
 
 const config: SectionDetails[] = [
   {
@@ -45,7 +57,12 @@ const config: SectionDetails[] = [
         <br />
         <p>
           I will be joining Amazon as a Software Development Engineer Intern
-          this summer in Seattle!
+          this summer in Seattle! I&apos;m very grateful for this opportunity
+          and can&apos;t for the summer.
+        </p>
+        <br />
+        <p className="celebrate" onClick={fireConfetti}>
+          <u>Celebrate!</u>
         </p>
       </>
     ),
