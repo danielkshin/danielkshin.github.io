@@ -13,7 +13,7 @@ const App = () => {
     if (!container) return;
 
     const handleScroll = () => {
-      const newSection = Math.floor(container.scrollTop / window.innerHeight);
+      const newSection = Math.round(container.scrollTop / window.innerHeight);
 
       if (newSection === currentSectionRef.current) return;
 
