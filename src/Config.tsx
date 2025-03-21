@@ -37,7 +37,7 @@ const projectDetails: ProjectDetails[] = [
     description: 'goals and highlights on demand',
     link: 'https://instantgoals.netlify.app/',
     image: assets.instantGoals,
-    color: '#FFD700',
+    color: '#4362b5',
   },
   {
     name: 'hankel',

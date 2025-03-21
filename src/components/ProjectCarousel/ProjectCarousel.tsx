@@ -38,20 +38,28 @@ const ProjectCarousel = (props: ProjectCarouselProps) => {
   };
 
   return (
-    <div className="project-carousel-container">
-      <div className="project-carousel" ref={projectCarouselRef}>
-        {projectDetails.map((project) => (
-          <a
-            href={project.link}
-            key={project.link}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={project.image}></img>
-          </a>
-        ))}
+    <div className="projects-container">
+      <div className="project-carousel-container">
+        <div className="project-carousel" ref={projectCarouselRef}>
+          {projectDetails.map((project) => (
+            <a
+              href={project.link}
+              key={project.link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={project.image}></img>
+            </a>
+          ))}
+        </div>
+        <IoIosArrowForward onClick={scroll} style={{ cursor: 'pointer' }} />
       </div>
-      <IoIosArrowForward onClick={scroll} style={{ cursor: 'pointer' }} />
+      <div>
+        <p>
+          <b>{projectDetails[currentProjectRef.current].name}</b>
+        </p>
+        <p>{projectDetails[currentProjectRef.current].description}</p>
+      </div>
     </div>
   );
 };
