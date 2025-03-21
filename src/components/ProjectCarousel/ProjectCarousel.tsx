@@ -2,11 +2,26 @@ import { IoIosArrowForward } from 'react-icons/io';
 import './ProjectCarousel.css';
 import { useRef } from 'react';
 import { ProjectDetails } from 'Config';
+import {
+  FaCss3Alt,
+  FaHtml5,
+  FaJsSquare,
+  FaNodeJs,
+  FaReact,
+} from 'react-icons/fa';
 
 interface ProjectCarouselProps {
   changeProjectsColor: (color: string) => void;
   projectDetails: ProjectDetails[];
 }
+
+const languages = {
+  react: <FaReact />,
+  nodejs: <FaNodeJs />,
+  js: <FaJsSquare />,
+  css: <FaCss3Alt />,
+  html: <FaHtml5 />,
+};
 
 const ProjectCarousel = (props: ProjectCarouselProps) => {
   const projectCarouselRef = useRef<HTMLDivElement>(null);
@@ -40,25 +55,38 @@ const ProjectCarousel = (props: ProjectCarouselProps) => {
   return (
     <div className="projects-container">
       <div className="project-carousel-container">
-        <div className="project-carousel" ref={projectCarouselRef}>
-          {projectDetails.map((project) => (
-            <a
-              href={project.link}
-              key={project.link}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={project.image}></img>
-            </a>
+        <div className="project-carousel">
+          <div className="project-carousel-icons" ref={projectCarouselRef}>
+            {projectDetails.map((project) => (
+              <a
+                href={project.link}
+                key={project.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={project.image}></img>
+              </a>
+            ))}
+          </div>
+          <IoIosArrowForward onClick={scroll} style={{ cursor: 'pointer' }} />
+        </div>
+        <div className="project-languages">
+          {projectDetails[currentProjectRef.current].languages.map((lang) => (
+            <div key={lang}>{languages[lang]}</div>
           ))}
         </div>
-        <IoIosArrowForward onClick={scroll} style={{ cursor: 'pointer' }} />
       </div>
-      <div>
-        <p>
-          <b>{projectDetails[currentProjectRef.current].name}</b>
-        </p>
-        <p>{projectDetails[currentProjectRef.current].description}</p>
+      <div className="project-details">
+        <a
+          href={projectDetails[currentProjectRef.current].link}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <p>
+            <b>{projectDetails[currentProjectRef.current].name}</b>
+          </p>
+          <p>{projectDetails[currentProjectRef.current].description}</p>
+        </a>
       </div>
     </div>
   );

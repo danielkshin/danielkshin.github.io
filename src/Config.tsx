@@ -13,11 +13,14 @@ export interface SectionDetails {
   titleColor: string;
 }
 
+type Language = 'react' | 'nodejs' | 'js' | 'css' | 'html';
+
 export interface ProjectDetails {
   name: string;
   description: string;
   link: string;
   image: string;
+  languages: Language[];
   color: string;
 }
 
@@ -37,6 +40,7 @@ const projectDetails: ProjectDetails[] = [
     description: 'goals and highlights on demand',
     link: 'https://instantgoals.netlify.app/',
     image: assets.instantGoals,
+    languages: ['react', 'nodejs', 'css'],
     color: '#4362b5',
   },
   {
@@ -44,6 +48,7 @@ const projectDetails: ProjectDetails[] = [
     description: 'a soccer planner',
     link: 'https://danielkshin.github.io/Hankel/',
     image: assets.hankel,
+    languages: ['html', 'css', 'js'],
     color: '#79c086',
   },
   {
@@ -52,6 +57,7 @@ const projectDetails: ProjectDetails[] = [
       'an original 2d platformer game with a unique mechanic around colors',
     link: 'https://danielkshin.github.io/colors',
     image: assets.colors,
+    languages: ['js'],
     color: '#ffb464',
   },
 ];

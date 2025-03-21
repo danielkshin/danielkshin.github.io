@@ -4,24 +4,46 @@
   gap: 1rem;
 }
 
+.project-details a {
+  text-decoration: none;
+}
+
+.project-languages {
+  display: flex;
+  gap: 0.25rem;
+  height: max-content;
+}
+
+.project-languages svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--text-color);
+}
+
 .project-carousel-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-carousel {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.project-carousel {
+.project-carousel-icons {
   display: flex;
   width: 2.25rem;
 
   overflow-x: hidden;
 }
 
-.project-carousel a {
+.project-carousel-icons a {
   text-decoration: none;
 }
 
-.project-carousel img {
+.project-carousel-icons img {
   width: 2rem;
   height: 2rem;
 
