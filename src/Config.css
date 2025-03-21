@@ -1,4 +1,5 @@
 .celebrate {
   color: var(--title-color);
+  width: min-content;
   cursor: pointer;
 }
