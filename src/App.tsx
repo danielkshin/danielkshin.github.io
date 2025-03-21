@@ -18,12 +18,15 @@ const App = () => {
       if (newSection === currentSectionRef.current) return;
 
       currentSectionRef.current = newSection;
-      container.style.setProperty(
+      document.body.style.setProperty(
         '--bg-color',
         config[newSection].backgroundColor
       );
-      container.style.setProperty('--text-color', config[newSection].textColor);
-      container.style.setProperty(
+      document.body.style.setProperty(
+        '--text-color',
+        config[newSection].textColor
+      );
+      document.body.style.setProperty(
         '--title-color',
         config[newSection].titleColor
       );

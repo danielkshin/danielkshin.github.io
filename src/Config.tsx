@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { SocialLinks } from 'components';
+import { SocialLinks, ProjectCarousel } from 'components';
 import confetti from 'canvas-confetti';
 import './Config.css';
 
@@ -79,7 +79,13 @@ const config: SectionDetails[] = [
   },
   {
     title: 'a dev',
-    content: <p>I enjoy building random projects. Check them out!</p>,
+    content: (
+      <>
+        <p>I enjoy building random projects. Check them out!</p>
+        <br />
+        <ProjectCarousel />
+      </>
+    ),
     id: 'projects',
     backgroundColor: '#262626',
     textColor: '#f2f2f2',

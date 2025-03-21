@@ -1,0 +1,28 @@
+.project-carousel-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-carousel {
+  display: flex;
+  width: 2.5rem;
+
+  gap: 0.5rem;
+  overflow-x: hidden;
+}
+
+.project-carousel a {
+  text-decoration: none;
+}
+
+.project-carousel img {
+  width: 2rem;
+  height: 2rem;
+
+  display: block;
+
+  background-color: var(--text-color);
+  padding: 0.125rem;
+  border-radius: 10%;
+}
