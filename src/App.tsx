@@ -1,11 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { Section } from 'components';
-import { config, SectionDetails } from 'Config';
+import useConfig, { SectionDetails } from 'Config';
 import './App.css';
 
 const App = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const currentSectionRef = useRef<number>(-1);
+  const config = useConfig();
 
   useEffect(() => {
     const container = containerRef.current;
@@ -39,7 +40,7 @@ const App = () => {
     return () => {
       container.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [config]);
 
   const renderSections = (config: SectionDetails[]) => {
     const sectionElements = [];

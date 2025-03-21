@@ -1,5 +1,6 @@
-import { ReactElement } from 'react';
+import { useState, ReactElement } from 'react';
 import { SocialLinks, ProjectCarousel } from 'components';
+import assets from 'assets';
 import confetti from 'canvas-confetti';
 import './Config.css';
 
@@ -12,6 +13,14 @@ export interface SectionDetails {
   titleColor: string;
 }
 
+export interface ProjectDetails {
+  name: string;
+  description: string;
+  link: string;
+  image: string;
+  color: string;
+}
+
 const fireConfetti = () => {
   (confetti as (options?: confetti.Options) => void)({
     particleCount: 100,
@@ -22,75 +31,111 @@ const fireConfetti = () => {
   });
 };
 
-const config: SectionDetails[] = [
+const projectDetails: ProjectDetails[] = [
   {
-    title: 'daniel',
-    content: (
-      <>
-        <p>cs @ uw | incoming sde intern @ amazon</p>
-        <br />
-        <SocialLinks />
-      </>
-    ),
-    id: 'about',
-    backgroundColor: '#f2f2f2',
-    textColor: '#121212',
-    titleColor: '#5aa57b',
+    name: 'instant goals',
+    description: 'goals and highlights on demand',
+    link: 'https://instantgoals.netlify.app/',
+    image: assets.instantGoals,
+    color: '#FFD700',
   },
   {
-    title: 'a student',
-    content: (
-      <>
-        <p>September 2024 - Present </p>
-        <br />
-        <p>
-          I am a first-year student studying Computer Science at the Paul G.
-          Allen School of Computer Science & Engineering at the University of
-          Washington.
-        </p>
-      </>
-    ),
-    id: 'education',
-    backgroundColor: '#4b2e83',
-    textColor: '#f2f2f2',
-    titleColor: '#b7a57a',
+    name: 'hankel',
+    description: 'a soccer planner',
+    link: 'https://danielkshin.github.io/Hankel/',
+    image: assets.hankel,
+    color: '#79c086',
   },
   {
-    title: 'an intern',
-    content: (
-      <>
-        <p>Starting June 2025</p>
-        <br />
-        <p>
-          I will be joining Amazon as a Software Development Engineer Intern
-          this summer in Seattle! I&apos;m very grateful for this opportunity
-          and can&apos;t for the summer.
-        </p>
-        <br />
-        <p className="celebrate" onClick={fireConfetti}>
-          <u>Celebrate!</u>
-        </p>
-      </>
-    ),
-    id: 'experience',
-    backgroundColor: '#232f3e',
-    textColor: '#f2f2f2',
-    titleColor: '#ff9900',
-  },
-  {
-    title: 'a dev',
-    content: (
-      <>
-        <p>I enjoy building random projects. Check them out!</p>
-        <br />
-        <ProjectCarousel />
-      </>
-    ),
-    id: 'projects',
-    backgroundColor: '#262626',
-    textColor: '#f2f2f2',
-    titleColor: '#676eba',
+    name: 'colors (remake)',
+    description:
+      'an original 2d platformer game with a unique mechanic around colors',
+    link: 'https://danielkshin.github.io/colors',
+    image: assets.colors,
+    color: '#ffb464',
   },
 ];
 
-export { config };
+const useConfig = () => {
+  const [projectsColor, setProjectsColor] = useState(projectDetails[0].color);
+
+  const config: SectionDetails[] = [
+    {
+      title: 'daniel',
+      content: (
+        <>
+          <p>cs @ uw | incoming sde intern @ amazon</p>
+          <br />
+          <SocialLinks />
+        </>
+      ),
+      id: 'about',
+      backgroundColor: '#f2f2f2',
+      textColor: '#121212',
+      titleColor: '#5aa57b',
+    },
+    {
+      title: 'a student',
+      content: (
+        <>
+          <p>September 2024 - Present </p>
+          <br />
+          <p>
+            I am a first-year student studying Computer Science at the Paul G.
+            Allen School of Computer Science & Engineering at the University of
+            Washington.
+          </p>
+        </>
+      ),
+      id: 'education',
+      backgroundColor: '#4b2e83',
+      textColor: '#f2f2f2',
+      titleColor: '#b7a57a',
+    },
+    {
+      title: 'an intern',
+      content: (
+        <>
+          <p>Starting June 2025</p>
+          <br />
+          <p>
+            I will be joining Amazon as a Software Development Engineer Intern
+            this summer in Seattle! I&apos;m very grateful for this opportunity
+            and can&apos;t for the summer.
+          </p>
+          <br />
+          <p className="celebrate" onClick={fireConfetti}>
+            <u>Celebrate!</u>
+          </p>
+        </>
+      ),
+      id: 'experience',
+      backgroundColor: '#232f3e',
+      textColor: '#f2f2f2',
+      titleColor: '#ff9900',
+    },
+    {
+      title: 'a dev',
+      content: (
+        <>
+          <p>I enjoy building random projects. Check them out!</p>
+          <br />
+          <ProjectCarousel
+            projectDetails={projectDetails}
+            changeProjectsColor={(color) => {
+              setProjectsColor(color);
+            }}
+          />
+        </>
+      ),
+      id: 'projects',
+      backgroundColor: '#262626',
+      textColor: '#f2f2f2',
+      titleColor: projectsColor,
+    },
+  ];
+
+  return config;
+};
+
+export default useConfig;

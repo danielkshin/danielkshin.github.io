@@ -1,64 +1,46 @@
 import { IoIosArrowForward } from 'react-icons/io';
 import './ProjectCarousel.css';
 import { useRef } from 'react';
-import assets from 'assets';
+import { ProjectDetails } from 'Config';
 
-const projects = [
-  {
-    name: 'instant goals',
-    description: 'goals and highlights on demand',
-    link: 'https://instantgoals.netlify.app/',
-    image: assets.instantGoals,
-    color: '#FFD700',
-  },
-  {
-    name: 'hankel',
-    description: 'a soccer planner',
-    link: 'https://danielkshin.github.io/Hankel/',
-    image: assets.hankel,
-    color: '#79c086',
-  },
-  {
-    name: 'colors (remake)',
-    descripton:
-      'an original 2d platformer game with a unique mechanic around colors',
-    link: 'https://danielkshin.github.io/colors',
-    image: assets.colors,
-    color: '#ffb464',
-  },
-];
+interface ProjectCarouselProps {
+  changeProjectsColor: (color: string) => void;
+  projectDetails: ProjectDetails[];
+}
 
-const ProjectCarousel = () => {
+const ProjectCarousel = (props: ProjectCarouselProps) => {
   const projectCarouselRef = useRef<HTMLDivElement>(null);
   const currentProjectRef = useRef<number>(0);
+  const projectDetails = props.projectDetails;
 
   const scroll = () => {
-    console.log(assets.bounce);
     const container = projectCarouselRef.current;
 
     if (!container) return;
 
     currentProjectRef.current += 1;
 
-    if (currentProjectRef.current >= projects.length) {
+    if (currentProjectRef.current >= projectDetails.length) {
       currentProjectRef.current = 0;
       container.scrollBy({
-        left: -44 * (projects.length - 1),
+        left: -44 * (projectDetails.length - 1),
         behavior: 'smooth',
       });
     } else {
       container.scrollBy({ left: 44, behavior: 'smooth' });
     }
+
+    props.changeProjectsColor(projectDetails[currentProjectRef.current].color);
     document.body.style.setProperty(
       '--title-color',
-      projects[currentProjectRef.current].color
+      projectDetails[currentProjectRef.current].color
     );
   };
 
   return (
     <div className="project-carousel-container">
       <div className="project-carousel" ref={projectCarouselRef}>
-        {projects.map((project) => (
+        {projectDetails.map((project) => (
           <a
             href={project.link}
             key={project.link}
@@ -69,7 +51,7 @@ const ProjectCarousel = () => {
           </a>
         ))}
       </div>
-      <IoIosArrowForward onClick={scroll} />
+      <IoIosArrowForward onClick={scroll} style={{ cursor: 'pointer' }} />
     </div>
   );
 };
