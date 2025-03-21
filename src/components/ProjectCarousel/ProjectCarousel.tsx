@@ -7,6 +7,7 @@ import {
   FaHtml5,
   FaJsSquare,
   FaNodeJs,
+  FaPython,
   FaReact,
 } from 'react-icons/fa';
 
@@ -21,6 +22,7 @@ const languages = {
   js: <FaJsSquare />,
   css: <FaCss3Alt />,
   html: <FaHtml5 />,
+  py: <FaPython />,
 };
 
 const ProjectCarousel = (props: ProjectCarouselProps) => {
