@@ -37,14 +37,16 @@ const ProjectCarousel = (props: ProjectCarouselProps) => {
 
     currentProjectRef.current += 1;
 
+    const scrollLength = container.clientWidth;
+
     if (currentProjectRef.current >= projectDetails.length) {
       currentProjectRef.current = 0;
       container.scrollBy({
-        left: -36 * (projectDetails.length - 1),
+        left: -scrollLength * (projectDetails.length - 1),
         behavior: 'smooth',
       });
     } else {
-      container.scrollBy({ left: 36, behavior: 'smooth' });
+      container.scrollBy({ left: scrollLength, behavior: 'smooth' });
     }
 
     props.changeProjectsColor(projectDetails[currentProjectRef.current].color);
