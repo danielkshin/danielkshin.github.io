@@ -166,7 +166,7 @@ const useConfig = () => {
           <p>
             I will be joining Amazon as a Software Development Engineer Intern
             this summer in Seattle! I&apos;m very grateful for this opportunity
-            and can&apos;t for the summer.
+            and can&apos;t wait to see what&apos;s in store for me this summer.
           </p>
           <br />
           <p className="celebrate" onClick={fireConfetti}>
