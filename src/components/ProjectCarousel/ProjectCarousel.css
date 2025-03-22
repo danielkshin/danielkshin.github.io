@@ -34,7 +34,7 @@
 
 .project-carousel-icons {
   display: flex;
-  width: 2rem;
+  width: 1.99rem;
 
   overflow-x: hidden;
 }
@@ -50,6 +50,6 @@
   display: block;
 
   background-color: var(--text-color);
-  border: 0.15rem solid var(--text-color);
+  padding: 0.15rem;
   border-radius: 15%;
 }
