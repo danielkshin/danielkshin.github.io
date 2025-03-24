@@ -1,6 +1,6 @@
 import { IoIosArrowForward } from 'react-icons/io';
 import './ProjectCarousel.css';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { ProjectDetails } from 'Config';
 import {
   FaCss3Alt,
@@ -29,8 +29,12 @@ const ProjectCarousel = (props: ProjectCarouselProps) => {
   const projectCarouselRef = useRef<HTMLDivElement>(null);
   const currentProjectRef = useRef<number>(0);
   const projectDetails = props.projectDetails;
+  const [isScrolling, setIsScrolling] = useState(false);
 
   const scroll = () => {
+    if (isScrolling) return;
+    setIsScrolling(true);
+
     const container = projectCarouselRef.current;
 
     if (!container) return;
@@ -50,6 +54,10 @@ const ProjectCarousel = (props: ProjectCarouselProps) => {
     }
 
     props.changeProjectsColor(projectDetails[currentProjectRef.current].color);
+
+    setTimeout(() => {
+      setIsScrolling(false);
+    }, 500);
   };
 
   return (
