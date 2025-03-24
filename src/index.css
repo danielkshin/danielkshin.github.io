@@ -18,3 +18,9 @@ body {
   user-select: none;
   -webkit-user-select: none;
 }
+
+body {
+  --bg-color: #567257;
+  --text-color: #f2f2f2;
+  --title-color: #c7b67a;
+}

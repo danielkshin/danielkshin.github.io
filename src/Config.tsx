@@ -135,9 +135,9 @@ const useConfig = () => {
         </>
       ),
       id: 'about',
-      backgroundColor: '#f2f2f2',
-      textColor: '#121212',
-      titleColor: '#5aa57b',
+      backgroundColor: '#567257',
+      textColor: '#f2f2f2',
+      titleColor: '#c7b67a',
     },
     {
       title: 'a student',
@@ -194,7 +194,7 @@ const useConfig = () => {
         </>
       ),
       id: 'projects',
-      backgroundColor: '#262626',
+      backgroundColor: '#1b1b1b',
       textColor: '#f2f2f2',
       titleColor: projectsColor,
     },
