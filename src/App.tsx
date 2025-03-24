@@ -1,11 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Section } from 'components';
 import useConfig, { SectionDetails } from 'Config';
 import './App.css';
 
 const App = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const currentSectionRef = useRef<number>(-1);
+  const [currentSection, setCurrentSection] = useState(0);
   const config = useConfig();
 
   useEffect(() => {
@@ -16,31 +16,34 @@ const App = () => {
     const handleScroll = () => {
       const newSection = Math.round(container.scrollTop / window.innerHeight);
 
-      if (newSection === currentSectionRef.current) return;
+      if (newSection === currentSection) return;
 
-      currentSectionRef.current = newSection;
-      document.body.style.setProperty(
-        '--bg-color',
-        config[newSection].backgroundColor
-      );
-      document.body.style.setProperty(
-        '--text-color',
-        config[newSection].textColor
-      );
-      document.body.style.setProperty(
-        '--title-color',
-        config[newSection].titleColor
-      );
+      setCurrentSection(newSection);
     };
 
     container.addEventListener('scroll', handleScroll);
 
-    handleScroll();
-
     return () => {
       container.removeEventListener('scroll', handleScroll);
     };
-  }, [config]);
+  }, [currentSection, config]);
+
+  useEffect(() => {
+    if (config[currentSection]) {
+      document.body.style.setProperty(
+        '--bg-color',
+        config[currentSection].backgroundColor
+      );
+      document.body.style.setProperty(
+        '--text-color',
+        config[currentSection].textColor
+      );
+      document.body.style.setProperty(
+        '--title-color',
+        config[currentSection].titleColor
+      );
+    }
+  }, [currentSection, config]);
 
   const renderSections = (config: SectionDetails[]) => {
     const sectionElements = [];
