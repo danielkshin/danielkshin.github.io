@@ -50,7 +50,6 @@ const App = () => {
           key={section.title}
           title={section.title}
           content={section.content}
-          id={section.id}
         />
       );
     }
@@ -59,7 +58,7 @@ const App = () => {
   };
 
   return (
-    <div className="container" id="container" ref={containerRef}>
+    <div className="container" ref={containerRef}>
       {renderSections(config)}
     </div>
   );

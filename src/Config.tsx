@@ -7,7 +7,6 @@ import './Config.css';
 export interface SectionDetails {
   title: string;
   content: ReactElement;
-  id: string;
   backgroundColor: string;
   textColor: string;
   titleColor: string;
@@ -134,7 +133,6 @@ const useConfig = () => {
           <SocialLinks />
         </>
       ),
-      id: 'about',
       backgroundColor: '#567257',
       textColor: '#f2f2f2',
       titleColor: '#c7b67a',
@@ -152,7 +150,6 @@ const useConfig = () => {
           </p>
         </>
       ),
-      id: 'education',
       backgroundColor: '#4b2e83',
       textColor: '#f2f2f2',
       titleColor: '#b7a57a',
@@ -174,7 +171,6 @@ const useConfig = () => {
           </p>
         </>
       ),
-      id: 'experience',
       backgroundColor: '#232f3e',
       textColor: '#f2f2f2',
       titleColor: '#ff9900',
@@ -193,7 +189,6 @@ const useConfig = () => {
           />
         </>
       ),
-      id: 'projects',
       backgroundColor: '#1b1b1b',
       textColor: '#f2f2f2',
       titleColor: projectsColor,

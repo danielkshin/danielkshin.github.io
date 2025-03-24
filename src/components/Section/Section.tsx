@@ -4,12 +4,11 @@ import './Section.css';
 interface SectionProps {
   title: string;
   content: ReactElement;
-  id: string;
 }
 
 const Section = (props: SectionProps) => {
   return (
-    <section id={props.id}>
+    <section id={props.title}>
       <div className="top-half">
         <h1 className="fixed-text">hi i&apos;m</h1>
         <h1>
