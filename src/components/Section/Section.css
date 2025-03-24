@@ -1,0 +1,48 @@
+section {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  height: 100dvh;
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+  transition: 1s background-color;
+}
+
+.top-half {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+
+  height: 40%;
+}
+
+.bottom-half {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+
+  height: 60%;
+}
+
+.content,
+h1 {
+  width: clamp(15rem, 50%, 30rem);
+  text-align: left;
+
+  transition: 1s color;
+}
+
+.fixed-text {
+  position: fixed;
+  pointer-events: none;
+}
+
+.hidden-text {
+  opacity: 0;
+}
+
+.title-text {
+  color: var(--title-color);
+  transition: 1s color;
+}
