@@ -50,10 +50,6 @@ const ProjectCarousel = (props: ProjectCarouselProps) => {
     }
 
     props.changeProjectsColor(projectDetails[currentProjectRef.current].color);
-    document.body.style.setProperty(
-      '--title-color',
-      projectDetails[currentProjectRef.current].color
-    );
   };
 
   return (
