@@ -11,7 +11,7 @@ const App = () => {
   useEffect(() => {
     const container = containerRef.current;
 
-    if (!container) return;
+    if (!container || !config[currentSection]) return;
 
     const handleScroll = () => {
       const newSection = Math.round(container.scrollTop / window.innerHeight);
@@ -23,26 +23,22 @@ const App = () => {
 
     container.addEventListener('scroll', handleScroll);
 
+    document.body.style.setProperty(
+      '--bg-color',
+      config[currentSection].backgroundColor
+    );
+    document.body.style.setProperty(
+      '--text-color',
+      config[currentSection].textColor
+    );
+    document.body.style.setProperty(
+      '--title-color',
+      config[currentSection].titleColor
+    );
+
     return () => {
       container.removeEventListener('scroll', handleScroll);
     };
-  }, [currentSection, config]);
-
-  useEffect(() => {
-    if (config[currentSection]) {
-      document.body.style.setProperty(
-        '--bg-color',
-        config[currentSection].backgroundColor
-      );
-      document.body.style.setProperty(
-        '--text-color',
-        config[currentSection].textColor
-      );
-      document.body.style.setProperty(
-        '--title-color',
-        config[currentSection].titleColor
-      );
-    }
   }, [currentSection, config]);
 
   const renderSections = (config: SectionDetails[]) => {
