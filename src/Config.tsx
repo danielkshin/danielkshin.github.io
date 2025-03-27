@@ -133,9 +133,9 @@ const useConfig = () => {
           <SocialLinks />
         </>
       ),
-      backgroundColor: '#567257',
+      backgroundColor: '#2f3e65',
       textColor: '#f2f2f2',
-      titleColor: '#c7b67a',
+      titleColor: '#62bfd8',
     },
     {
       title: 'a student',
@@ -189,7 +189,7 @@ const useConfig = () => {
           />
         </>
       ),
-      backgroundColor: '#1b1b1b',
+      backgroundColor: '#202020',
       textColor: '#f2f2f2',
       titleColor: projectsColor,
     },
