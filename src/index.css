@@ -25,4 +25,6 @@ body {
   --bg-color: #2f3e65;
   --text-color: #f2f2f2;
   --title-color: #62bfd8;
+
+  background-color: var(--bg-color);
 }
