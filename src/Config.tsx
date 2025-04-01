@@ -1,5 +1,5 @@
 import { useState, ReactElement } from 'react';
-import { SocialLinks, ProjectCarousel } from 'components';
+import { SocialLinks, Projects } from 'components';
 import assets from 'assets';
 import confetti from 'canvas-confetti';
 import './Config.css';
@@ -181,7 +181,7 @@ const useConfig = () => {
         <>
           <p>I enjoy building random projects. Check them out!</p>
           <br />
-          <ProjectCarousel
+          <Projects
             projectDetails={projectDetails}
             changeProjectsColor={(color) => {
               setProjectsColor(color);
