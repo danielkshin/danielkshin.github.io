@@ -26,30 +26,34 @@
   align-items: center;
 }
 
+.project-carousel-with-arrow {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
 .project-carousel {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  width: 2rem;
+  overflow-x: hidden;
 }
 
 .project-carousel-icons {
   display: flex;
-  width: 2rem;
-
-  overflow-x: hidden;
+  width: 100%;
+  transition: 0.5s;
 }
 
 .project-carousel-icons a {
+  flex: 0 0 100%;
   text-decoration: none;
 }
 
 .project-carousel-icons img {
-  width: 1.7rem;
-  height: 1.7rem;
-
   display: block;
-
   background-color: var(--text-color);
-  padding: 0.15rem;
+  width: 85%;
+  padding: 7.5%;
   border-radius: 15%;
 }

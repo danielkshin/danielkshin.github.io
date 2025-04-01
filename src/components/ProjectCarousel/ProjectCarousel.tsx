@@ -1,6 +1,6 @@
 import { IoIosArrowForward } from 'react-icons/io';
 import './ProjectCarousel.css';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { ProjectDetails } from 'Config';
 import {
   FaCss3Alt,
@@ -26,8 +26,7 @@ const languages = {
 };
 
 const ProjectCarousel = (props: ProjectCarouselProps) => {
-  const projectCarouselRef = useRef<HTMLDivElement>(null);
-  const currentProjectRef = useRef<number>(0);
+  const [currentProject, setCurrentProject] = useState(0);
   const projectDetails = props.projectDetails;
   const [isScrolling, setIsScrolling] = useState(false);
 
@@ -35,25 +34,9 @@ const ProjectCarousel = (props: ProjectCarouselProps) => {
     if (isScrolling) return;
     setIsScrolling(true);
 
-    const container = projectCarouselRef.current;
-
-    if (!container) return;
-
-    currentProjectRef.current += 1;
-
-    const scrollLength = container.clientWidth;
-
-    if (currentProjectRef.current >= projectDetails.length) {
-      currentProjectRef.current = 0;
-      container.scrollBy({
-        left: -scrollLength * (projectDetails.length - 1),
-        behavior: 'smooth',
-      });
-    } else {
-      container.scrollBy({ left: scrollLength, behavior: 'smooth' });
-    }
-
-    props.changeProjectsColor(projectDetails[currentProjectRef.current].color);
+    const newIndex = (currentProject + 1) % projectDetails.length;
+    setCurrentProject(newIndex);
+    props.changeProjectsColor(projectDetails[newIndex].color);
 
     setTimeout(() => {
       setIsScrolling(false);
@@ -63,37 +46,44 @@ const ProjectCarousel = (props: ProjectCarouselProps) => {
   return (
     <div className="projects-container">
       <div className="project-carousel-container">
-        <div className="project-carousel">
-          <div className="project-carousel-icons" ref={projectCarouselRef}>
-            {projectDetails.map((project) => (
-              <a
-                href={project.link}
-                key={project.link}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={project.image}></img>
-              </a>
-            ))}
+        <div className="project-carousel-with-arrow">
+          <div className="project-carousel">
+            <div
+              className="project-carousel-icons"
+              style={{
+                transform: `translateX(-${String(currentProject * 100)}%)`,
+              }}
+            >
+              {projectDetails.map((project) => (
+                <a
+                  href={project.link}
+                  key={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={project.image}></img>
+                </a>
+              ))}
+            </div>
           </div>
           <IoIosArrowForward onClick={scroll} style={{ cursor: 'pointer' }} />
         </div>
         <div className="project-languages">
-          {projectDetails[currentProjectRef.current].languages.map((lang) => (
+          {projectDetails[currentProject].languages.map((lang) => (
             <div key={lang}>{languages[lang]}</div>
           ))}
         </div>
       </div>
       <div className="project-details">
         <a
-          href={projectDetails[currentProjectRef.current].link}
+          href={projectDetails[currentProject].link}
           target="_blank"
           rel="noreferrer"
         >
           <p>
-            <b>{projectDetails[currentProjectRef.current].name}</b>
+            <b>{projectDetails[currentProject].name}</b>
           </p>
-          <p>{projectDetails[currentProjectRef.current].description}</p>
+          <p>{projectDetails[currentProject].description}</p>
         </a>
       </div>
     </div>
