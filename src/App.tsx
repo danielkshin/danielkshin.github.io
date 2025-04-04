@@ -14,7 +14,18 @@ const App = () => {
     if (!container || !config[currentSection]) return;
 
     const handleScroll = () => {
-      const newSection = Math.round(container.scrollTop / window.innerHeight);
+      const sections = [...container.children];
+      const visibleSection = sections.find((section) => {
+        const rect = section.getBoundingClientRect();
+        return (
+          rect.top <= window.innerHeight / 2 &&
+          rect.bottom >= window.innerHeight / 2
+        );
+      });
+
+      if (!visibleSection) return;
+
+      const newSection = sections.indexOf(visibleSection);
 
       if (newSection === currentSection) return;
 
