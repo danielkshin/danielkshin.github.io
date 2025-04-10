@@ -193,29 +193,29 @@ const useConfig = () => {
       textColor: '#f2f2f2',
       titleColor: projectsColor,
     },
-    {
-      title: '..',
-      content: (
-        <>
-          <br />
-          <br />
-          <br />
-          <div style={{ textAlign: 'right' }}>
-            <p>a portfolio website</p>
-            <p>created by daniel shin</p>
-            <p>
-              with{' '}
-              <a href="https://react.dev" target="_blank" rel="noreferrer">
-                react
-              </a>
-            </p>
-          </div>
-        </>
-      ),
-      backgroundColor: '#396041',
-      textColor: '#f2f2f2',
-      titleColor: '#f2f2f2',
-    },
+    // {
+    //   title: '..',
+    //   content: (
+    //     <>
+    //       <br />
+    //       <br />
+    //       <br />
+    //       <div style={{ textAlign: 'right' }}>
+    //         <p>a portfolio website</p>
+    //         <p>created by daniel shin</p>
+    //         <p>
+    //           with{' '}
+    //           <a href="https://react.dev" target="_blank" rel="noreferrer">
+    //             react
+    //           </a>
+    //         </p>
+    //       </div>
+    //     </>
+    //   ),
+    //   backgroundColor: '#396041',
+    //   textColor: '#f2f2f2',
+    //   titleColor: '#f2f2f2',
+    // },
   ];
 
   return config;
