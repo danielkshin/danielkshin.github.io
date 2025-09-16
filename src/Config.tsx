@@ -161,17 +161,9 @@ const useConfig = () => {
           <p>June - September 2025</p>
           <br />
           <p>
-            I joined the{' '}
-            <a
-              href="https://www.amazon.com/gp/help/customer/display.html?nodeId=TdTxJpU1DSrDBoGijl"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Kindle Rewards
-            </a>{' '}
-            team as an SDE Intern at Amazon. It was an incredible experience
-            where I contributed to enhancing the Kindle Rewards system and
-            worked alongside talented professionals.
+            I joined the Kindle Rewards team as an SDE Intern at Amazon. It was
+            an incredible experience where I contributed to enhancing the Kindle
+            Rewards system and worked alongside talented professionals.
           </p>
         </>
       ),
