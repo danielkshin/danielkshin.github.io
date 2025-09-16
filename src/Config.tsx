@@ -128,7 +128,7 @@ const useConfig = () => {
       title: 'daniel',
       content: (
         <>
-          <p>cs @ uw | incoming sde intern @ amazon</p>
+          <p>cs @ uw</p>
           <br />
           <SocialLinks />
         </>
@@ -144,7 +144,7 @@ const useConfig = () => {
           <p>September 2024 - Present </p>
           <br />
           <p>
-            I am a first-year student studying Computer Science at the Paul G.
+            I am a second-year student studying Computer Science at the Paul G.
             Allen School of Computer Science & Engineering at the University of
             Washington.
           </p>
@@ -158,16 +158,20 @@ const useConfig = () => {
       title: 'an intern',
       content: (
         <>
-          <p>Starting June 2025</p>
+          <p>June - September 2025</p>
           <br />
           <p>
-            I will be joining Amazon as a Software Development Engineer Intern
-            this summer in Seattle! I&apos;m very grateful for this opportunity
-            and can&apos;t wait to see what&apos;s in store for me this summer.
-          </p>
-          <br />
-          <p className="celebrate" onClick={fireConfetti}>
-            <u>Celebrate!</u>
+            I joined the{' '}
+            <a
+              href="https://www.amazon.com/gp/help/customer/display.html?nodeId=TdTxJpU1DSrDBoGijl"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Kindle Rewards
+            </a>{' '}
+            team as an SDE Intern at Amazon. It was an incredible experience
+            where I contributed to enhancing the Kindle Rewards system and
+            worked alongside talented professionals.
           </p>
         </>
       ),
