@@ -1,7 +1,7 @@
 import { useState, ReactElement } from 'react';
 import { SocialLinks, Projects } from 'components';
 import assets from 'assets';
-import confetti from 'canvas-confetti';
+// import confetti from 'canvas-confetti';
 import './Config.css';
 
 export interface SectionDetails {
@@ -23,15 +23,15 @@ export interface ProjectDetails {
   color: string;
 }
 
-const fireConfetti = () => {
-  (confetti as (options?: confetti.Options) => void)({
-    particleCount: 100,
-    spread: 80,
-    startVelocity: 40,
-    origin: { y: 0.6 },
-    colors: ['#ff9900', '#146eb4', '#232f3e', '#f2f2f2'],
-  });
-};
+// const fireConfetti = () => {
+//   (confetti as (options?: confetti.Options) => void)({
+//     particleCount: 100,
+//     spread: 80,
+//     startVelocity: 40,
+//     origin: { y: 0.6 },
+//     colors: ['#ff9900', '#146eb4', '#232f3e', '#f2f2f2'],
+//   });
+// };
 
 const projectDetails: ProjectDetails[] = [
   {
