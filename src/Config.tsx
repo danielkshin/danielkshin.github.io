@@ -1,7 +1,7 @@
 import { useState, ReactElement } from 'react';
 import { SocialLinks, Projects } from 'components';
 import assets from 'assets';
-// import confetti from 'canvas-confetti';
+import confetti from 'canvas-confetti';
 import './Config.css';
 
 export interface SectionDetails {
@@ -23,15 +23,15 @@ export interface ProjectDetails {
   color: string;
 }
 
-// const fireConfetti = () => {
-//   (confetti as (options?: confetti.Options) => void)({
-//     particleCount: 100,
-//     spread: 80,
-//     startVelocity: 40,
-//     origin: { y: 0.6 },
-//     colors: ['#ff9900', '#146eb4', '#232f3e', '#f2f2f2'],
-//   });
-// };
+const fireConfetti = () => {
+  (confetti as (options?: confetti.Options) => void)({
+    particleCount: 100,
+    spread: 80,
+    startVelocity: 40,
+    origin: { y: 0.6 },
+    colors: ['#ff9900', '#146eb4', '#232f3e', '#f2f2f2'],
+  });
+};
 
 const projectDetails: ProjectDetails[] = [
   {
@@ -128,7 +128,7 @@ const useConfig = () => {
       title: 'daniel',
       content: (
         <>
-          <p>cs @ uw</p>
+          <p>cs @ uw | incoming @ amazon</p>
           <br />
           <SocialLinks />
         </>
@@ -164,6 +164,25 @@ const useConfig = () => {
             I joined the Kindle Rewards team as an SDE Intern at Amazon. It was
             an incredible experience where I contributed to enhancing the Kindle
             Rewards system and worked alongside talented professionals.
+          </p>
+        </>
+      ),
+      backgroundColor: '#2972bc',
+      textColor: '#ffffff',
+      titleColor: '#1c2530',
+    },
+    {
+      title: 'an intern',
+      content: (
+        <>
+          <p>Starting June 2026</p>
+          <br />
+          <p>
+            I will be returning to Amazon this summer as an SDE Intern!
+          </p>
+          <br />
+          <p className="celebrate" onClick={fireConfetti}>
+            <u>Celebrate!</u>
           </p>
         </>
       ),
