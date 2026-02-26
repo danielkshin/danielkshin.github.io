@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Section } from 'components';
+import { Section, ScrollIndicator } from 'components';
 import useConfig, { SectionDetails } from 'Config';
 import './App.css';
 
@@ -68,9 +68,24 @@ const App = () => {
     return sectionElements;
   };
 
+  const scrollToNextSection = () => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const sections = [...container.children];
+    const nextSection = sections[currentSection + 1] as HTMLElement;
+
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="container" ref={containerRef}>
       {renderSections(config)}
+      {!(currentSection === config.length - 1) && (
+        <ScrollIndicator scrollToNextSection={scrollToNextSection} />
+      )}
     </div>
   );
 };
