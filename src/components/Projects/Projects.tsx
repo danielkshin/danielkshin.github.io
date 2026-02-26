@@ -13,11 +13,11 @@ const Projects = (props: ProjectsProps) => {
   const projectDetails = props.projectDetails;
   const [isScrolling, setIsScrolling] = useState(false);
 
-  const scroll = () => {
+  const scroll = (direction: 'next' | 'prev') => {
     if (isScrolling) return;
     setIsScrolling(true);
 
-    const newIndex = (currentProject + 1) % projectDetails.length;
+    const newIndex = (currentProject + projectDetails.length + (direction === 'next' ? 1 : -1)) % projectDetails.length;
     setCurrentProject(newIndex);
     props.changeProjectsColor(projectDetails[newIndex].color);
 

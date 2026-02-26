@@ -1,6 +1,6 @@
 import './ProjectCarousel.css';
 import { ProjectDetails as ProjectDetailsType } from 'Config';
-import { IoIosArrowForward } from 'react-icons/io';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import {
   FaCss3Alt,
   FaHtml5,
@@ -20,7 +20,7 @@ const languages = {
 };
 
 interface ProjectCarouselProps {
-  scroll: () => void;
+  scroll: (direction: 'next' | 'prev') => void;
   currentProject: number;
   projectDetails: ProjectDetailsType[];
 }
@@ -32,6 +32,12 @@ const ProjectCarousel = (props: ProjectCarouselProps) => {
   return (
     <div className="project-carousel-container">
       <div className="project-carousel-with-arrow">
+        <IoIosArrowBack
+          onClick={() => {
+            props.scroll('prev');
+          }}
+          style={{ cursor: 'pointer' }}
+        />
         <div className="project-carousel">
           <div
             className="project-carousel-icons"
@@ -53,7 +59,7 @@ const ProjectCarousel = (props: ProjectCarouselProps) => {
         </div>
         <IoIosArrowForward
           onClick={() => {
-            props.scroll();
+            props.scroll('next');
           }}
           style={{ cursor: 'pointer' }}
         />
