@@ -1,7 +1,7 @@
 import { useState, ReactElement } from 'react';
 import { SocialLinks, Projects } from 'components';
 import assets from 'assets';
-import confetti from 'canvas-confetti';
+// import confetti from 'canvas-confetti';
 import './Config.css';
 
 export interface SectionDetails {
@@ -23,15 +23,15 @@ export interface ProjectDetails {
   color: string;
 }
 
-const fireConfetti = () => {
-  (confetti as (options?: confetti.Options) => void)({
-    particleCount: 100,
-    spread: 80,
-    startVelocity: 40,
-    origin: { y: 0.6 },
-    colors: ['#ff9900', '#146eb4', '#232f3e', '#f2f2f2'],
-  });
-};
+// const fireConfetti = () => {
+//   (confetti as (options?: confetti.Options) => void)({
+//     particleCount: 100,
+//     spread: 80,
+//     startVelocity: 40,
+//     origin: { y: 0.6 },
+//     colors: ['#ff9900', '#146eb4', '#232f3e', '#f2f2f2'],
+//   });
+// };
 
 const projectDetails: ProjectDetails[] = [
   {
@@ -128,7 +128,7 @@ const useConfig = () => {
       title: 'daniel',
       content: (
         <>
-          <p>cs @ uw | incoming @ amazon</p>
+          <p>cs @ uw</p>
           <br />
           <SocialLinks />
         </>
@@ -144,7 +144,7 @@ const useConfig = () => {
           <p>September 2024 - Present </p>
           <br />
           <p>
-            I am a second-year student studying Computer Science at the Paul G.
+            I am a third-year student studying Computer Science at the Paul G.
             Allen School of Computer Science & Engineering at the University of
             Washington.
           </p>
@@ -158,37 +158,16 @@ const useConfig = () => {
       title: 'an intern',
       content: (
         <>
-          <p>June - September 2025</p>
+          <p>June - September 2025, 2026</p>
           <br />
           <p>
-            I joined the Kindle Rewards team as an SDE Intern at Amazon. It was
-            an incredible experience where I contributed to enhancing the Kindle
-            Rewards system and worked alongside talented professionals.
+            I joined Amazon Books as an SDE Intern, where I worked on the Kindle Rewards platform in 2025 and returned in 2026 to improve the marketing automation system.
           </p>
         </>
       ),
-      backgroundColor: '#2972bc',
+      backgroundColor: '#161d26',
       textColor: '#ffffff',
-      titleColor: '#1c2530',
-    },
-    {
-      title: 'an intern',
-      content: (
-        <>
-          <p>Starting June 2026</p>
-          <br />
-          <p>
-            I will be returning to Amazon this summer as an SDE Intern!
-          </p>
-          <br />
-          <p className="celebrate" onClick={fireConfetti}>
-            <u>Celebrate!</u>
-          </p>
-        </>
-      ),
-      backgroundColor: '#232f3e',
-      textColor: '#f2f2f2',
-      titleColor: '#ff9900',
+      titleColor: '#ff6200',
     },
     {
       title: 'a dev',
