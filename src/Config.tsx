@@ -12,7 +12,7 @@ export interface SectionDetails {
   titleColor: string;
 }
 
-type Language = 'react' | 'nodejs' | 'js' | 'css' | 'html' | 'py';
+type Language = 'react' | 'nodejs' | 'js' | 'css' | 'html' | 'py' | 'c#' | 'unity';
 
 export interface ProjectDetails {
   name: string;
@@ -34,6 +34,14 @@ export interface ProjectDetails {
 // };
 
 const projectDetails: ProjectDetails[] = [
+  {
+    name: 'Sushi Dojo',
+    description: 'Have you ever wanted to play a fun and exciting cooking game with your friend? Well, now you can!',
+    link: 'https://danielkshin.github.io/sushi-dojo/',
+    image: assets.sushi,
+    languages: ['c#', 'unity'],
+    color: '#e74749',
+  },
   {
     name: 'instant goals',
     description: 'Goals and highlights on demand.',

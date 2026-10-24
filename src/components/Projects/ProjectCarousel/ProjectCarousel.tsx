@@ -4,19 +4,23 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import {
   FaCss3Alt,
   FaHtml5,
-  FaJsSquare,
+  FaSquareJs,
   FaNodeJs,
   FaPython,
   FaReact,
-} from 'react-icons/fa';
+  FaUnity,
+} from 'react-icons/fa6';
+import { TbBrandCSharp } from 'react-icons/tb';
 
 const languages = {
   react: <FaReact />,
   nodejs: <FaNodeJs />,
-  js: <FaJsSquare />,
+  js: <FaSquareJs />,
   css: <FaCss3Alt />,
   html: <FaHtml5 />,
   py: <FaPython />,
+  'c#': <TbBrandCSharp />,
+  unity: <FaUnity />,
 };
 
 interface ProjectCarouselProps {

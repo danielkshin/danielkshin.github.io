@@ -1,3 +1,4 @@
+import sushi from './projects/sushi.png';
 import instantGoals from './projects/instantgoals.png';
 import hankel from './projects/hankel.png';
 import colors from './projects/colors.png';
@@ -10,6 +11,7 @@ import bounce from './projects/bounce.png';
 import omok from './projects/omok.png';
 
 const assets = {
+  sushi,
   instantGoals,
   hankel,
   colors,
